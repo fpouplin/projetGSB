@@ -8,12 +8,12 @@ package vue;
  *
  * @author gproquin
  */
-public class GestionCompte extends javax.swing.JFrame {
+public class V_vueGestionCompte extends javax.swing.JFrame {
 
     /**
      * Creates new form GestionCompte
      */
-    public GestionCompte() {
+    public V_vueGestionCompte() {
         initComponents();
     }
 
@@ -106,20 +106,20 @@ public class GestionCompte extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GestionCompte.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(V_vueGestionCompte.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GestionCompte.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(V_vueGestionCompte.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GestionCompte.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(V_vueGestionCompte.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GestionCompte.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(V_vueGestionCompte.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GestionCompte().setVisible(true);
+                new V_vueGestionCompte().setVisible(true);
             }
         });
     }

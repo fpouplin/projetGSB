@@ -8,12 +8,12 @@ package vue;
  *
  * @author gproquin
  */
-public class praticiens extends javax.swing.JFrame {
+public class V_vuePraticiens extends javax.swing.JFrame {
 
     /**
      * Creates new form medicaments
      */
-    public praticiens() {
+    public V_vuePraticiens() {
         initComponents();
     }
 
@@ -247,20 +247,20 @@ public class praticiens extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(praticiens.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(V_vuePraticiens.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(praticiens.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(V_vuePraticiens.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(praticiens.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(V_vuePraticiens.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(praticiens.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(V_vuePraticiens.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new praticiens().setVisible(true);
+                new V_vuePraticiens().setVisible(true);
             }
         });
     }
