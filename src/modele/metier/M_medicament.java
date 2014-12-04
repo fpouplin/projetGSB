@@ -20,6 +20,19 @@ public class M_medicament {
     private String med_contreindic;
     private float med_prixEchantillon; 
 
+    public M_medicament(String med_depotLegal, String med_nomCommercial, M_famille med_fam, String med_composition, String med_effets, String med_contreindic, float med_prixEchantillon) {
+        this.med_depotLegal = med_depotLegal;
+        this.med_nomCommercial = med_nomCommercial;
+        this.med_fam = med_fam;
+        this.med_composition = med_composition;
+        this.med_effets = med_effets;
+        this.med_contreindic = med_contreindic;
+        this.med_prixEchantillon = med_prixEchantillon;
+        
+    }
+    
+    
+    
     public String getMed_depotLegal() {
         return med_depotLegal;
     }

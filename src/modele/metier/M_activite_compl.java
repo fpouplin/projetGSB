@@ -19,6 +19,14 @@ public class M_activite_compl {
     private String ac_lieu;
     private String ac_theme;
     private String motif;
+    
+    public M_activite_compl(int ac_num, java.sql.Date ac_date, String ac_lieu, String ac_theme, String motif) {
+        this.ac_num = ac_num;
+        this.ac_date = ac_date;
+        this.ac_lieu = ac_lieu;
+        this.ac_theme = ac_theme;
+        this.motif = motif;
+    }
 
     public int getAc_num() {
         return ac_num;

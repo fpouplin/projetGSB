@@ -15,6 +15,13 @@ public class M_secteur {
     private int sec_code;
     private String sec_libelle;
 
+    public M_secteur(int sec_code, String sec_libelle) {
+        this.sec_code = sec_code;
+        this.sec_libelle = sec_libelle;
+        
+    }
+    
+    
     public int getSec_code() {
         return sec_code;
     }
