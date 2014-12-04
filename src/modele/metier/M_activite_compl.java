@@ -23,7 +23,7 @@ public class M_activite_compl {
     
     /**
      * Constructeur avec les 5 attributs
-     * @param ac_num : identifiant BDD de la table region
+     * @param ac_num : identifiant BDD de la table activite_compl
      * @param ac_date
      * @param ac_lieu
      * @param ac_theme
