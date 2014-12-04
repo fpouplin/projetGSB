@@ -15,6 +15,13 @@ public class M_secteur {
     private int sec_code;
     private String sec_libelle;
 
+    
+    
+    /**
+     * Constructeur avec les 2 attributs
+     * @param sec_code : identifiant BDD de la table secteur
+     * @param sec_libelle
+    **/
     public M_secteur(int sec_code, String sec_libelle) {
         this.sec_code = sec_code;
         this.sec_libelle = sec_libelle;

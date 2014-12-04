@@ -20,6 +20,18 @@ public class M_medicament {
     private String med_contreindic;
     private float med_prixEchantillon; 
 
+    
+    
+    /**
+     * Constructeur avec les 7 attributs
+     * @param med_depotLegal : identifiant BDD de la table MEdicament
+     * @param med_nomCommercial
+     * @param med_fam   
+     * @param med_composition
+     * @param med_effets    
+     * @param med_contreindic
+     * @param med_prixEchantillon
+    **/
     public M_medicament(String med_depotLegal, String med_nomCommercial, M_famille med_fam, String med_composition, String med_effets, String med_contreindic, float med_prixEchantillon) {
         this.med_depotLegal = med_depotLegal;
         this.med_nomCommercial = med_nomCommercial;
