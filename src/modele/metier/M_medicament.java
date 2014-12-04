@@ -10,11 +10,11 @@ package modele.metier;
  *
  * @author btssio
  */
-public class M_Medicament {
+public class M_medicament {
     
     private String med_depotLegal;
     private String med_nomCommercial;
-    private Famille med_fam;
+    private M_famille med_fam;
     private String med_composition;
     private String med_effets;
     private String med_contreindic;
@@ -36,11 +36,11 @@ public class M_Medicament {
         this.med_nomCommercial = med_nomCommercial;
     }
 
-    public Famille getMed_fam() {
+    public M_famille getMed_fam() {
         return med_fam;
     }
 
-    public void setMed_fam(Famille med_fam) {
+    public void setMed_fam(M_famille med_fam) {
         this.med_fam = med_fam;
     }
 
