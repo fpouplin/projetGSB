@@ -8,12 +8,12 @@ package vue;
  *
  * @author gproquin
  */
-public class V_vueConnection extends javax.swing.JFrame {
+public class V_vueConnexion extends javax.swing.JFrame {
 
     /**
      * Creates new form NewJFrame
      */
-    public V_vueConnection() {
+    public V_vueConnexion() {
         initComponents();
     }
 
@@ -31,7 +31,7 @@ public class V_vueConnection extends javax.swing.JFrame {
         jPasswordFieldMotDePasse = new javax.swing.JPasswordField();
         jLabelIdentifiant = new javax.swing.JLabel();
         jLabelMotDePasse = new javax.swing.JLabel();
-        jLabelVueIdentification = new javax.swing.JLabel();
+        jLabelVueConnexion = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,17 +59,13 @@ public class V_vueConnection extends javax.swing.JFrame {
 
         jLabelMotDePasse.setText("Mot de passe");
 
-        jLabelVueIdentification.setText("Identification");
+        jLabelVueConnexion.setText("Connexion");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabelVueIdentification)
-                .addGap(155, 155, 155))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap(91, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -83,14 +79,17 @@ public class V_vueConnection extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jPasswordFieldMotDePasse)
                             .addComponent(jTextFieldIdentifiant, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(82, 82, 82))))
+                        .addGap(82, 82, 82))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabelVueConnexion)
+                        .addGap(167, 167, 167))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabelVueIdentification)
-                .addGap(34, 34, 34)
+                .addGap(32, 32, 32)
+                .addComponent(jLabelVueConnexion)
+                .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldIdentifiant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelIdentifiant))
@@ -135,20 +134,20 @@ public class V_vueConnection extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(V_vueConnection.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(V_vueConnexion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(V_vueConnection.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(V_vueConnexion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(V_vueConnection.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(V_vueConnexion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(V_vueConnection.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(V_vueConnexion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new V_vueConnection().setVisible(true);
+                new V_vueConnexion().setVisible(true);
             }
         });
     }
@@ -156,7 +155,7 @@ public class V_vueConnection extends javax.swing.JFrame {
     private javax.swing.JButton jButtonConnecter;
     private javax.swing.JLabel jLabelIdentifiant;
     private javax.swing.JLabel jLabelMotDePasse;
-    private javax.swing.JLabel jLabelVueIdentification;
+    private javax.swing.JLabel jLabelVueConnexion;
     private javax.swing.JPasswordField jPasswordFieldMotDePasse;
     private javax.swing.JTextField jTextFieldIdentifiant;
     // End of variables declaration//GEN-END:variables
