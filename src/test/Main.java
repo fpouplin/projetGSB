@@ -2,7 +2,6 @@ package test;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import modele.dao.Jdbc;
@@ -29,6 +28,6 @@ public class Main {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
         Connection cnx = Jdbc.getInstance().getConnexion();
-        
+    
     }
 }
