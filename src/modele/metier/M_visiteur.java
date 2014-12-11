@@ -21,6 +21,8 @@ public class M_visiteur {
     private String cp;
     private String ville;
     private Date dateEmbauche;
+    private String secteur;
+    private String labo;
     
     /**
      * Constructeur avec les 8 attributs
@@ -31,9 +33,11 @@ public class M_visiteur {
      * @param cp
      * @param ville
      * @param dateEmbauche
+     * @param secteur
+     * @param labo
      */
 
-    public M_visiteur(String matricule, String nom, String prenom, String adresse, String cp, String ville, Date dateEmbauche) {
+    public M_visiteur(String matricule, String nom, String prenom, String adresse, String cp, String ville, Date dateEmbauche, String secteur, String labo) {
         this.matricule = matricule;
         this.nom = nom;
         this.prenom = prenom;
@@ -41,6 +45,24 @@ public class M_visiteur {
         this.cp = cp;
         this.ville = ville;
         this.dateEmbauche = dateEmbauche;
+        this.secteur = secteur;
+        this.labo = labo ;
+    }
+
+    public String getSecteur() {
+        return secteur;
+    }
+
+    public void setSecteur(String secteur) {
+        this.secteur = secteur;
+    }
+
+    public String getLabo() {
+        return labo;
+    }
+
+    public void setLabo(String labo) {
+        this.labo = labo;
     }
 
     public String getMatricule() {

@@ -6,7 +6,7 @@
 
 package modele.metier;
 
-import java.sql.Date;
+import java.util.Date;
 
 /**
  *
@@ -15,7 +15,7 @@ import java.sql.Date;
 public class M_activite_compl {
     
     private int ac_num;
-    private java.sql.Date ac_date;
+    private java.util.Date ac_date;
     private String ac_lieu;
     private String ac_theme;
     private String motif;
