@@ -36,7 +36,7 @@ public class M_daoVisiteur {
                         "FROM VISITEUR v \n" +
                         "INNER JOIN SECTEUR s ON s.SEC_CODE = v.SEC_CODE\n" +
                         "INNER JOIN LABO l ON l.LAB_CODE = v.LAB_CODE "
-                 + "     WHERE v.VIS_MATRICULE = "+ matriculeVisiteur + " ;";
+                 + "     WHERE v.VIS_MATRICULE = '"+ matriculeVisiteur + "' ;";
         pstmt = jdbc.getConnexion().prepareStatement(requete);
         pstmt.setInt(1, matriculeVisiteur);
         rs = pstmt.executeQuery();
