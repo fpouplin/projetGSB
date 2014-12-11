@@ -1,7 +1,7 @@
 /*
- * DaoAdresse
+ * Daovisiteur
  * @author btssio
- * @version 15/04/2014
+ * @version 11/12/2014
  */
 package modele.dao;
 
@@ -24,84 +24,74 @@ public class M_daoVisiteur {
         PreparedStatement pstmt;
         Jdbc jdbc = Jdbc.getInstance();
         // préparer la requête
-        String requete = "SELECT VIS_NOM AS nom, Vis_PRENOM AS prenom, VIS_ADRESSE AS adresse, VIS_CP AS cp, VIS_VILLE AS ville, SEC_LIBELLE AS secteur,  "
-                + "LAB_NOM AS labo"
-                + " FROM VISITEUR v "
-                + "INNER JOIN SECTEUR s ON s.SEC_CODE = a.SEC_CODE"
-                + "INNER JOIN LABO l ON l.LAB_NOM = v.LAB_NOM ;";
+        String requete = "SELECT v.VIS_MATRICULE as mat,"
+                      + "VIS_NOM AS nom, \n" +
+                        "VIS_PRENOM AS prenom, \n" +
+                        "VIS_ADRESSE AS adresse, \n" +
+                        "VIS_CP AS cp, \n" +
+                        "VIS_VILLE AS ville, \n" +
+                        "v.VIS_DATEEMBAUCHE as dateEmb,"+
+                        "SEC_LIBELLE AS secteur, \n" +
+                        "LAB_NOM AS labo\n" +
+                        "FROM VISITEUR v \n" +
+                        "INNER JOIN SECTEUR s ON s.SEC_CODE = v.SEC_CODE\n" +
+                        "INNER JOIN LABO l ON l.LAB_CODE = v.LAB_CODE "
+                 + "     WHERE v.VIS_MATRICULE = "+ matriculeVisiteur + " ;";
         pstmt = jdbc.getConnexion().prepareStatement(requete);
-        pstmt.setInt(1, idAdresse);
+        pstmt.setInt(1, matriculeVisiteur);
         rs = pstmt.executeQuery();
         if (rs.next()) {
-            int id = rs.getInt("ID");
-            String rue = rs.getString("RUE");
-            String cdp = rs.getString("CDP");
-            String ville = rs.getString("VILLE");
-            uneAdresse = new Adresse(id, rue, cdp, ville);
+            String mat = rs.getString("mat");
+            String nom = rs.getString("nom");
+            String prenom = rs.getString("prenom");
+            String adresse = rs.getString("adresse");
+            String cp = rs.getString("cp");
+            String ville = rs.getString("ville");
+            java.util.Date dateEmb = rs.getDate("dateEmb") ;
+            String secteur = rs.getString("secteur");
+            String labo = rs.getString("labo");
+            unVisiteur = new M_visiteur( mat , nom, prenom, adresse, cp, ville, dateEmb, secteur, labo);
         }
-        return uneAdresse;
+        return unVisiteur;
     }
 
-    public static List<Adresse> selectAll() throws SQLException {
-        List<Adresse> lesAdresses = new ArrayList<Adresse>();
-        Adresse uneAdresse;
+    public static List<M_visiteur> selectAll() throws SQLException {
+        List<M_visiteur> lesVisiteurs = new ArrayList<M_visiteur>();
+        M_visiteur unVisiteur;
         ResultSet rs;
         PreparedStatement pstmt;
         Jdbc jdbc = Jdbc.getInstance();
         // préparer la requête
-        String requete = "SELECT * FROM ADRESSE";
+        String requete = "SELECT v.VIS_MATRICULE as mat,"
+                      + "VIS_NOM AS nom, \n" +
+                        "VIS_PRENOM AS prenom, \n" +
+                        "VIS_ADRESSE AS adresse, \n" +
+                        "VIS_CP AS cp, \n" +
+                        "VIS_VILLE AS ville, \n" +
+                        "v.VIS_DATEEMBAUCHE as dateEmb,"+
+                        "SEC_LIBELLE AS secteur, \n" +
+                        "LAB_NOM AS labo\n" +
+                        "FROM VISITEUR v \n" +
+                        "INNER JOIN SECTEUR s ON s.SEC_CODE = v.SEC_CODE\n" +
+                        "INNER JOIN LABO l ON l.LAB_CODE = v.LAB_CODE ;";
         pstmt = jdbc.getConnexion().prepareStatement(requete);
         rs = pstmt.executeQuery();
         while (rs.next()) {
-            int id = rs.getInt("ID");
-            String rue = rs.getString("RUE");
-            String cdp = rs.getString("CDP");
-            String ville = rs.getString("VILLE");
-            uneAdresse = new Adresse(id, rue, cdp, ville);
-            lesAdresses.add(uneAdresse);
+            String mat = rs.getString("mat");
+            String nom = rs.getString("nom");
+            String prenom = rs.getString("prenom");
+            String adresse = rs.getString("adresse");
+            String cp = rs.getString("cp");
+            String ville = rs.getString("ville");
+            java.util.Date dateEmb = rs.getDate("dateEmb") ;
+            String secteur = rs.getString("secteur");
+            String labo = rs.getString("labo");
+            unVisiteur = new M_visiteur( mat , nom, prenom, adresse, cp, ville, dateEmb, secteur, labo);
+            lesVisiteurs.add(unVisiteur);
         }
-        return lesAdresses;
+        return lesVisiteurs;
     }
-
-    public static List<Adresse> selectAll(int cleTri, int ordreTri) throws SQLException {
-        List<Adresse> lesAdresses = new ArrayList<Adresse>();
-        Adresse uneAdresse;
-        ResultSet rs;
-        PreparedStatement pstmt;
-        Jdbc jdbc = Jdbc.getInstance();
-        // préparer la requête
-        String requete = "SELECT * FROM ADRESSE";
-        switch (cleTri) {
-            case 1: // Tri par Id
-                requete += " ORDER BY ID";
-                break;
-            case 2: // Tri par ville
-                requete += " ORDER BY VILLE";
-                break;
-        }
-        if (cleTri == 1 || cleTri == 2) {
-            switch (ordreTri) {
-                case 1: // Tri croissant
-                    requete += " ASC";
-                    break;
-                case 2: // Tri décroissant
-                    requete += " DESC";
-                    break;
-            }
-        }
-        pstmt = jdbc.getConnexion().prepareStatement(requete);
-        rs = pstmt.executeQuery();
-        while (rs.next()) {
-            int id = rs.getInt("ID");
-            String rue = rs.getString("RUE");
-            String cdp = rs.getString("CDP");
-            String ville = rs.getString("VILLE");
-            uneAdresse = new Adresse(id, rue, cdp, ville);
-            lesAdresses.add(uneAdresse);
-        }
-        return lesAdresses;
-    }
-
+/*
     public static int insert(int idAdresse, Adresse uneAdresse) throws SQLException {
         int nb;
         Jdbc jdbc = Jdbc.getInstance();
@@ -146,4 +136,6 @@ public class M_daoVisiteur {
         nb = pstmt.executeUpdate();
         return nb;
     }
+    
+    */
 }
