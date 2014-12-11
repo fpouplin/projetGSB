@@ -20,6 +20,15 @@ public class M_activite_compl {
     private String ac_theme;
     private String motif;
     
+    
+    /**
+     * Constructeur avec les 5 attributs
+     * @param ac_num : identifiant BDD de la table activite_compl
+     * @param ac_date
+     * @param ac_lieu
+     * @param ac_theme
+     * @param motif
+    **/
     public M_activite_compl(int ac_num, java.sql.Date ac_date, String ac_lieu, String ac_theme, String motif) {
         this.ac_num = ac_num;
         this.ac_date = ac_date;

@@ -17,7 +17,12 @@ public class M_region {
     private M_secteur reg_sec;
     private String reg_nom;
 
-    
+    /**
+     * Constructeur avec les 3 attributs
+     * @param reg_code : identifiant BDD de la table region
+     * @param reg_sec
+     * @param reg_nom
+    **/
     public M_region(int reg_code, M_secteur reg_sec, String reg_nom) {
         this.reg_code = reg_code;
         this.reg_sec = reg_sec;
