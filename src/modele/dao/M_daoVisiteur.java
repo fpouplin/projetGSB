@@ -18,7 +18,13 @@ import java.util.List;
  */
 public class M_daoVisiteur {
 
-    public static M_visiteur selectOne(int matriculeVisiteur) throws SQLException {
+    
+    /*
+    @author Florian
+    Fonction qui crée un objet visiteur en fonction du matricule du visiteur.
+    @Param String matriculeVIsiteur
+    */
+    public static M_visiteur selectOne(String matriculeVisiteur) throws SQLException {
         M_visiteur unVisiteur = null;
         ResultSet rs;
         PreparedStatement pstmt;
@@ -38,7 +44,7 @@ public class M_daoVisiteur {
                         "INNER JOIN LABO l ON l.LAB_CODE = v.LAB_CODE "
                  + "     WHERE v.VIS_MATRICULE = '"+ matriculeVisiteur + "' ;";
         pstmt = jdbc.getConnexion().prepareStatement(requete);
-        pstmt.setInt(1, matriculeVisiteur);
+        pstmt.setString(1, matriculeVisiteur);
         rs = pstmt.executeQuery();
         if (rs.next()) {
             String mat = rs.getString("mat");
@@ -55,6 +61,11 @@ public class M_daoVisiteur {
         return unVisiteur;
     }
 
+    /*
+    @author Florian
+    Fonction qui crée une liste d'objet de tous les visiteurs de la base de donnée
+    *
+    */
     public static List<M_visiteur> selectAll() throws SQLException {
         List<M_visiteur> lesVisiteurs = new ArrayList<M_visiteur>();
         M_visiteur unVisiteur;
