@@ -4,12 +4,18 @@
  */
 package vue;
 
+import javax.swing.JComboBox;
+
 /**
  *
  * @author gproquin
  */
 public class V_vueVisiteurs extends javax.swing.JFrame {
 
+    public JComboBox getjComboBoxChercher() {
+        return jComboBoxChercher;
+    }
+    
     /**
      * Creates new form medicaments
      */

@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 package vue;
-
+import controleur.C_Connexion;
 /**
  *
  * @author gproquin
@@ -13,10 +13,20 @@ public class V_vueConnexion extends javax.swing.JFrame {
     /**
      * Creates new form NewJFrame
      */
+    public C_Connexion controleur=null;
+
     public V_vueConnexion() {
         initComponents();
     }
+    
+    public C_Connexion getControleur(){
+        return (C_Connexion)controleur;
+    }
 
+    public void setControleur(C_Connexion controleur) {
+        this.controleur = controleur;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

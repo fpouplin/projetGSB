@@ -1,12 +1,16 @@
 package test;
 
+import controleur.C_Connexion;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import modele.dao.Jdbc;
- 
-/*!
+import vue.V_vueConnexion;
+
+
+/**
  *
  * @author btssio
  */
@@ -28,6 +32,10 @@ public class Main {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
         Connection cnx = Jdbc.getInstance().getConnexion();
-    
+        V_vueConnexion vueConnexion = new V_vueConnexion();
+        C_Connexion unControleur = new C_Connexion(vueConnexion);
+        vueConnexion.setControleur(unControleur);
+        // afficher la vue
+        vueConnexion.setVisible(true);
     }
 }
