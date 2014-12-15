@@ -149,7 +149,7 @@ public class M_daoVisiteur {
         PreparedStatement pstmt;
         Jdbc jdbc = Jdbc.getInstance();
         // préparer la requête
-        String requete = "SELECT VIS_NOM AS nom,VIS_PRENOM AS prenom,VIS_ADRESSE AS adresse,VIS_CP AS cp,VIS_VILLE AS ville,SEC_CODE AS secteur,LAB_CODE AS labo FROM VISITEUR v WHERE VIS_NOM=? AND VIS_PRENOM=?";
+        String requete = "SELECT v.VIS_NOM AS nom,v.VIS_PRENOM AS prenom,v.VIS_ADRESSE AS adresse,v.VIS_CP AS cp,v.VIS_VILLE AS ville,v.SEC_CODE AS secteur,l.LAB_NOM AS labo FROM VISITEUR v INNER JOIN LABO l ON l.LAB_CODE = v.LAB_CODE WHERE v.VIS_NOM=? AND v.VIS_PRENOM=?";
         pstmt = jdbc.getConnexion().prepareStatement(requete);
         pstmt.setString(1, nom);
         pstmt.setString(2, prenom);
