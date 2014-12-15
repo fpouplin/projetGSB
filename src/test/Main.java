@@ -1,13 +1,12 @@
 package test;
 
-import controleur.C_Connexion;
+import controleur.C_Visiteur;
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import modele.dao.Jdbc;
-import vue.V_vueConnexion;
+import vue.V_vueVisiteurs;
 
 
 /**
@@ -18,24 +17,23 @@ public class Main {
 
     /**
      * @param args the command line arguments
+     * @throws java.sql.SQLException
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         //org.apache.derby.jdbc.ClientDriver jdbc:derby://localhost:1527/agenceB_JPA
 //        Jdbc.creer("oracle.jdbc.driver.OracleDriver", "jdbc:oracle:thin:", "@localhost:1521:XE", "", "btssio", "btssio");
 //        Jdbc.creer("com.mysql.jdbc.Driver", "jdbc:mysql:", "//localhost/", "AGENCEB", "root", "joliverie");
         Jdbc.creer("oracle.jdbc.driver.OracleDriver", "jdbc:oracle:thin:", "@localhost:1521:XE", "", "GSB", "GSB");
         try {
             Jdbc.getInstance().connecter();
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
+        } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
         Connection cnx = Jdbc.getInstance().getConnexion();
-        V_vueConnexion vueConnexion = new V_vueConnexion();
-        C_Connexion unControleur = new C_Connexion(vueConnexion);
-        vueConnexion.setControleur(unControleur);
+        V_vueVisiteurs vueVisiteurs = new V_vueVisiteurs();
+        C_Visiteur unControleur = new C_Visiteur(vueVisiteurs);
+        vueVisiteurs.setControleur(unControleur);
         // afficher la vue
-        vueConnexion.setVisible(true);
+        vueVisiteurs.setVisible(true);
     }
 }

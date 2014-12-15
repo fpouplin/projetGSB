@@ -30,39 +30,43 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
+              <Component id="jButtonPrecedent" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabelNom" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabelPrenom" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabelChercher" alignment="0" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="77" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jTextFieldPrenom" alignment="1" min="-2" pref="212" max="-2" attributes="0"/>
-                          <Component id="jTextFieldNom" alignment="1" min="-2" pref="212" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabelVueVisiteurs" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <Component id="jComboBoxChercher" min="-2" pref="104" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jButtonChercherValider" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace max="32767" attributes="0"/>
-                  </Group>
-              </Group>
+              <Component id="jButtonSuivant" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabelNom" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelPrenom" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelChercher" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace pref="77" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jTextFieldPrenom" alignment="1" min="-2" pref="212" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldNom" alignment="1" min="-2" pref="212" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabelVueVisiteurs" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Component id="jComboBoxChercher" max="32767" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jButtonChercherValider" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                      </Group>
+                  </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabelVille" min="-2" max="-2" attributes="0"/>
@@ -71,9 +75,9 @@
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jTextFieldVille1" min="-2" pref="59" max="-2" attributes="0"/>
+                              <Component id="jTextFieldCp" min="-2" pref="59" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jTextFieldVille2" min="-2" pref="146" max="-2" attributes="0"/>
+                              <Component id="jTextFieldVille" min="-2" pref="146" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jTextFieldSecteur" min="-2" pref="211" max="-2" attributes="0"/>
                       </Group>
@@ -90,13 +94,6 @@
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
-              <Component id="jButtonPrecedent" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jButtonSuivant" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -128,8 +125,8 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jTextFieldVille1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextFieldVille2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextFieldCp" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextFieldVille" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabelVille" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -191,21 +188,13 @@
     <Component class="javax.swing.JTextField" name="jTextFieldPrenom">
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldNom">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldNomActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldSecteur">
     </Component>
     <Component class="javax.swing.JComboBox" name="jComboBoxChercher">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="Item 1"/>
-            <StringItem index="1" value="Item 2"/>
-            <StringItem index="2" value="Item 3"/>
-            <StringItem index="3" value="Item 4"/>
-          </StringArray>
+          <StringArray count="0"/>
         </Property>
       </Properties>
     </Component>
@@ -221,6 +210,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Suivant"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonSuivantActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabelLabo">
       <Properties>
@@ -237,9 +229,9 @@
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldAdresse">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextFieldVille1">
+    <Component class="javax.swing.JTextField" name="jTextFieldCp">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextFieldVille2">
+    <Component class="javax.swing.JTextField" name="jTextFieldVille">
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldLabo">
     </Component>

@@ -4,23 +4,62 @@
  */
 package vue;
 
+import controleur.C_Visiteur;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JComboBox;
+import javax.swing.JTextField;
 
 /**
  *
  * @author gproquin
  */
-public class V_vueVisiteurs extends javax.swing.JFrame {
+public class V_vueVisiteurs extends VueAbstraite {
 
-    public JComboBox getjComboBoxChercher() {
-        return jComboBoxChercher;
-    }
-    
     /**
      * Creates new form medicaments
      */
     public V_vueVisiteurs() {
+        super();
         initComponents();
+    }
+
+    @Override
+    public C_Visiteur getControleur() {
+        return (C_Visiteur) controleur;
+    }
+
+    public JComboBox getjComboBoxChercher() {
+        return jComboBoxChercher;
+    }
+
+    public JTextField getjTextFieldNom() {
+        return jTextFieldNom;
+    }
+
+    public JTextField getjTextFieldPrenom() {
+        return jTextFieldPrenom;
+    }
+
+    public JTextField getjTextFieldAdresse() {
+        return jTextFieldAdresse;
+    }
+
+    public JTextField getjTextFieldCp() {
+        return jTextFieldCp;
+    }
+
+    public JTextField getjTextFieldVille() {
+        return jTextFieldVille;
+    }
+
+    public JTextField getjTextFieldSecteur() {
+        return jTextFieldSecteur;
+    }
+
+    public JTextField getjTextFieldLabo() {
+        return jTextFieldLabo;
     }
 
     /**
@@ -49,8 +88,8 @@ public class V_vueVisiteurs extends javax.swing.JFrame {
         jLabelLabo = new javax.swing.JLabel();
         jButtonChercherValider = new javax.swing.JButton();
         jTextFieldAdresse = new javax.swing.JTextField();
-        jTextFieldVille1 = new javax.swing.JTextField();
-        jTextFieldVille2 = new javax.swing.JTextField();
+        jTextFieldCp = new javax.swing.JTextField();
+        jTextFieldVille = new javax.swing.JTextField();
         jTextFieldLabo = new javax.swing.JTextField();
 
         jTextField3.setText("jTextField3");
@@ -71,14 +110,6 @@ public class V_vueVisiteurs extends javax.swing.JFrame {
 
         jLabelSecteur.setText("SECTEUR");
 
-        jTextFieldNom.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldNomActionPerformed(evt);
-            }
-        });
-
-        jComboBoxChercher.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         jButtonPrecedent.setText("Précédent");
         jButtonPrecedent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,6 +118,11 @@ public class V_vueVisiteurs extends javax.swing.JFrame {
         });
 
         jButtonSuivant.setText("Suivant");
+        jButtonSuivant.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSuivantActionPerformed(evt);
+            }
+        });
 
         jLabelLabo.setText("LABO");
 
@@ -102,58 +138,53 @@ public class V_vueVisiteurs extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(106, 106, 106)
+                .addComponent(jButtonPrecedent)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButtonSuivant)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelNom)
-                    .addComponent(jLabelPrenom)
-                    .addComponent(jLabelChercher))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextFieldPrenom, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldNom, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(77, 77, 77)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelVueVisiteurs)
+                            .addComponent(jLabelNom)
+                            .addComponent(jLabelPrenom)
+                            .addComponent(jLabelChercher))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextFieldPrenom, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldNom, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jComboBoxChercher, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButtonChercherValider)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGap(77, 77, 77)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabelVueVisiteurs)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jComboBoxChercher, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jButtonChercherValider))))))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabelVille)
                             .addComponent(jLabelSecteur))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTextFieldVille1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextFieldCp, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextFieldVille2, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jTextFieldVille, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jTextFieldSecteur, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(jLabelLabo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jTextFieldLabo, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(jLabelAdresse)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jTextFieldAdresse, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(106, 106, 106)
-                .addComponent(jButtonPrecedent)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButtonSuivant)
-                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -179,8 +210,8 @@ public class V_vueVisiteurs extends javax.swing.JFrame {
                     .addComponent(jLabelAdresse))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldVille1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldVille2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldCp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldVille, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelVille))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -201,16 +232,29 @@ public class V_vueVisiteurs extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonPrecedentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPrecedentActionPerformed
-        // TODO add your handling code here:
+        try {
+            getControleur().precedent();
+        } catch (SQLException ex) {
+            Logger.getLogger(V_vueVisiteurs.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButtonPrecedentActionPerformed
 
-    private void jTextFieldNomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldNomActionPerformed
-
     private void jButtonChercherValiderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonChercherValiderActionPerformed
-        // TODO add your handling code here:
+        try {
+            getControleur().rechercheVisiteur();
+        } catch (SQLException ex) {
+            Logger.getLogger(V_vueVisiteurs.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }//GEN-LAST:event_jButtonChercherValiderActionPerformed
+
+    private void jButtonSuivantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSuivantActionPerformed
+        try {
+            getControleur().suivant();
+        } catch (SQLException ex) {
+            Logger.getLogger(V_vueVisiteurs.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButtonSuivantActionPerformed
 
     /**
      * @param args the command line arguments
@@ -241,11 +285,13 @@ public class V_vueVisiteurs extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new V_vueVisiteurs().setVisible(true);
             }
         });
     }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonChercherValider;
     private javax.swing.JButton jButtonPrecedent;
@@ -261,11 +307,11 @@ public class V_vueVisiteurs extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelVueVisiteurs;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextFieldAdresse;
+    private javax.swing.JTextField jTextFieldCp;
     private javax.swing.JTextField jTextFieldLabo;
     private javax.swing.JTextField jTextFieldNom;
     private javax.swing.JTextField jTextFieldPrenom;
     private javax.swing.JTextField jTextFieldSecteur;
-    private javax.swing.JTextField jTextFieldVille1;
-    private javax.swing.JTextField jTextFieldVille2;
+    private javax.swing.JTextField jTextFieldVille;
     // End of variables declaration//GEN-END:variables
 }
