@@ -4,19 +4,33 @@
  */
 package vue;
 
+import controleur.C_Rapport;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
 /**
  *
  * @author gproquin
  */
-public class V_vueRapportsVisite extends javax.swing.JFrame {
+public class V_vueRapportsVisite extends VueAbstraite {
 
     /**
      * Creates new form RapportsVisite
      */
     public V_vueRapportsVisite() {
+        super();
         initComponents();
     }
 
+    @Override
+    public C_Rapport getControleur() {
+        return (C_Rapport) controleur;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -87,6 +101,11 @@ public class V_vueRapportsVisite extends javax.swing.JFrame {
         jLabelPraticien.setText("Praticien");
 
         jComboBoxPraticien.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxPraticien.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxPraticienActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -185,6 +204,10 @@ public class V_vueRapportsVisite extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonSuivantActionPerformed
 
+    private void jComboBoxPraticienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxPraticienActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxPraticienActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -239,4 +262,78 @@ public class V_vueRapportsVisite extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldMotifVisite;
     private javax.swing.JTextField jTextFieldNumRapport;
     // End of variables declaration//GEN-END:variables
+
+    public JComboBox getjComboBoxPraticien() {
+        return jComboBoxPraticien;
+    }
+
+    public JButton getjButtonPraticienDetails() {
+        return jButtonPraticienDetails;
+    }
+
+    public JButton getjButtonPrecedent() {
+        return jButtonPrecedent;
+    }
+
+    public JButton getjButtonSuivant() {
+        return jButtonSuivant;
+    }
+
+    public JLabel getjLabelBilan() {
+        return jLabelBilan;
+    }
+
+    public JLabel getjLabelDateRapport() {
+        return jLabelDateRapport;
+    }
+
+    public JLabel getjLabelMotifVisite() {
+        return jLabelMotifVisite;
+    }
+
+    public JLabel getjLabelNumRapport() {
+        return jLabelNumRapport;
+    }
+
+    public JLabel getjLabelOffreEchantillon() {
+        return jLabelOffreEchantillon;
+    }
+
+    public JLabel getjLabelPraticien() {
+        return jLabelPraticien;
+    }
+
+    public JLabel getjLabelVueRapportVisites() {
+        return jLabelVueRapportVisites;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public JScrollPane getjScrollPane2() {
+        return jScrollPane2;
+    }
+
+    public JTextArea getjTextAreaBilan() {
+        return jTextAreaBilan;
+    }
+
+    public JTextArea getjTextAreaOffreEchantillon() {
+        return jTextAreaOffreEchantillon;
+    }
+
+    public JTextField getjTextFieldDateRapport() {
+        return jTextFieldDateRapport;
+    }
+
+    public JTextField getjTextFieldMotifVisite() {
+        return jTextFieldMotifVisite;
+    }
+
+    public JTextField getjTextFieldNumRapport() {
+        return jTextFieldNumRapport;
+    }
+
+    
 }
