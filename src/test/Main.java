@@ -23,7 +23,7 @@ public class Main {
         //org.apache.derby.jdbc.ClientDriver jdbc:derby://localhost:1527/agenceB_JPA
 //        Jdbc.creer("oracle.jdbc.driver.OracleDriver", "jdbc:oracle:thin:", "@localhost:1521:XE", "", "btssio", "btssio");
 //        Jdbc.creer("com.mysql.jdbc.Driver", "jdbc:mysql:", "//localhost/", "AGENCEB", "root", "joliverie");
-        Jdbc.creer("oracle.jdbc.driver.OracleDriver", "jdbc:oracle:thin:", "@172.15.11.102:1521:orcl", "", "ora_2slamppe_eq6", "equipe06");
+        Jdbc.creer("oracle.jdbc.driver.OracleDriver", "jdbc:oracle:thin:", "@172.15.11.102:1521:orcl", "", "fpouplin", "FPOUPLIN");
         //Jdbc.creer("oracle.jdbc.driver.OracleDriver", "jdbc:oracle:thin:", "@localhost:1521:XE", "", "GSB", "GSB");
         try {
             Jdbc.getInstance().connecter();
